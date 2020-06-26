@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import firebase from "../../firebase";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 class Login extends Component {
   constructor(props) {
     super(props);

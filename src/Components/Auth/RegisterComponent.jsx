@@ -46,6 +46,7 @@ class Register extends Component {
         .ref()
         .child("/users" + userData.user.uid)
         .set({
+          email: userData.user.email,
           photoURL: userData.user.photoURL,
           displayName: userData.user.displayName,
           uid: userData.user.uid,

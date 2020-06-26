@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import HeaderComponent from "./Components/Header/HeaderComponent";
 import { ToastContainer } from "react-toastify";
+import firebase from "./firebase";
 import "react-toastify/dist/ReactToastify.css";
 import {
   BrowserRouter as Router,
@@ -16,14 +17,30 @@ import PageNotFoundComponent from "./Components/PagenotFound/PageNotFoundCompone
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      userData: "",
+    };
   }
+  // call firebase api
+  async componentDidMount() {
+    await firebase.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        this.setState({ userData: user });
+        this.props.history.push("/");
+      } else {
+        this.setState({ userData: "" });
+        this.props.history.push("/login");
+      }
+    });
+  }
+
   render() {
     return (
       <Fragment>
         <Router>
           <header>
-            <HeaderComponent />
+            <HeaderComponent user={this.state.userData} />
           </header>
           <ToastContainer />
           <main>
