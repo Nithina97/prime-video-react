@@ -24,6 +24,7 @@ class HeaderComponent extends Component {
   }
 
   render() {
+    let { photoURL, displayName, email } = this.props.user;
     let AnonymousUser = () => {
       return (
         <Fragment>
@@ -44,6 +45,16 @@ class HeaderComponent extends Component {
     let AuthUser = () => {
       return (
         <Fragment>
+           <li className="nav-item">
+            <a className="nav-link" href="#" >
+              {email}
+            </a>
+            </li>
+             <li className="nav-item">
+            <a className="nav-link" href="#" >
+              <img src={photoURL} alt="displayName" className="img-circle profile-img" />
+            </a>
+          </li>
           <li className="nav-item">
             <a className="nav-link" href="#" onClick={this.signOut}>
               Logout

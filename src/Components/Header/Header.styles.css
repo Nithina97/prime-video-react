@@ -10,3 +10,11 @@
 .nav-link {
     color: #fff;
 }
+.profile-img{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    padding: 10px;
+    display: block;
+
+}
