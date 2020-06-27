@@ -9,12 +9,17 @@
 
 .nav-link {
     color: #fff;
+    position: relative;
 }
-.profile-img{
-    width: 70px;
-    height: 70px;
+.profile_img {
+    width: 55px;
+    height: 55px;
     border-radius: 100%;
     padding: 10px;
     display: block;
+    line-height: 30px;
+    position: absolute;
+    left: 0px;
+    top: -5px;
 
 }

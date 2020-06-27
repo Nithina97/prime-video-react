@@ -50,16 +50,17 @@ class HeaderComponent extends Component {
               {email}
             </a>
             </li>
+            <li className="nav-item">
+            <a className="nav-link" href="#" onClick={this.signOut}>
+              Logout
+            </a>
+          </li>
              <li className="nav-item">
             <a className="nav-link" href="#" >
               <img src={photoURL} alt="displayName" className="img-circle profile-img" />
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#" onClick={this.signOut}>
-              Logout
-            </a>
-          </li>
+          
         </Fragment>
       );
     };
