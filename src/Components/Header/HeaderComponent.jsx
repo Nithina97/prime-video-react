@@ -45,22 +45,40 @@ class HeaderComponent extends Component {
     let AuthUser = () => {
       return (
         <Fragment>
-           <li className="nav-item">
-            <a className="nav-link" href="#" >
+          <li className="nav-item">
+            <Link className="nav-link" to="/list-movies">
+              Movies
+            </Link>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">
               {email}
             </a>
-            </li>
-            <li className="nav-item">
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/video-list">
+              Videos
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link a-button-primary" to="/upload-video">
+              upload
+            </Link>
+          </li>
+          <li className="nav-item">
             <a className="nav-link" href="#" onClick={this.signOut}>
               Logout
             </a>
           </li>
-             <li className="nav-item">
-            <a className="nav-link" href="#" >
-              <img src={photoURL} alt="displayName" className="img-circle profile-img" />
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+              <img
+                src={photoURL}
+                alt="displayName"
+                className="img-circle profile_img"
+              />
             </a>
           </li>
-          
         </Fragment>
       );
     };

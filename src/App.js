@@ -14,6 +14,9 @@ import Login from "./Components/Auth/LoginComponent";
 import Register from "./Components/Auth/RegisterComponent";
 import PasswordReset from "./Components/Auth/PasswordResetComponent";
 import PageNotFoundComponent from "./Components/PagenotFound/PageNotFoundComponent";
+import ListMovie from "./Components/PrimeDetails/ListMovie";
+import UploadVideoForm from "./Components/VideosComponent/UploadVideoForm";
+import ListVideo from "./Components/VideosComponent/ListsVideos";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -43,13 +46,25 @@ class App extends Component {
             <HeaderComponent user={this.state.userData} />
           </header>
           <ToastContainer />
+
           <main>
             <Switch>
               <Route path="/" exact component={HomeComponent} />
-
               <Route path="/login" exact component={Login} />
               <Route path="/register" exact component={Register} />
               <Route path="/password-reset" exact component={PasswordReset} />
+              {this.state.userData ? (
+                <Fragment>
+                  <Route path="/list-movies" exact component={ListMovie} />
+                  <Route
+                    path="/upload-video"
+                    exact
+                    component={() => (
+                      <UploadVideoForm user={this.state.userData} />
+                    )}
+                  />
+                </Fragment>
+              ) : null}
               <Route path="**" component={PageNotFoundComponent} />
             </Switch>
           </main>
